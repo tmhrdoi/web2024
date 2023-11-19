@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script>
+function 伝言する() {
+  if (入力内容.value == "") {
+    alert("入力内容を入れてください");
+  } else {
+    伝言エリア.innerText = 入力内容.value;
+    画像.src = `https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=${ 入力内容.value }`;
+    alert("伝言をセットしました");
+    入力内容.value = "";
+  }
+}
+</script>
+  </head>
+  <body>
+    伝言板
+    <p id="伝言エリア">伝言はまだありません</p>
+    <p><img id="画像" alt="ここにQRコードが生成される"></p>
+    <input id="入力内容"><button onclick="伝言する();">セット</button>
+  </body>
+</html>
